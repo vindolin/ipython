@@ -8,7 +8,7 @@ In [1]: %gui clutter
 In [2]: %run gui-clutter.py
 """
 
-from gi.repository import Clutter
+from gi.repository import Clutter, GLib
 
 
 def on_click(*args):
@@ -37,13 +37,13 @@ actor.connect('button-press-event', on_click)
 actor.set_reactive(True)
 actor.set_pivot_point(0.5, 0.5)
 
-tranition = Clutter.PropertyTransition(property_name='rotation-angle-z')
-tranition.set_duration(5000)
-tranition.set_from(0.0)
-tranition.set_to(360.0)
-tranition.set_animatable(actor)
-tranition.set_repeat_count(-1)
-tranition.start()
+transition = Clutter.PropertyTransition(property_name='rotation-angle-z')
+transition.set_duration(5000)
+transition.set_from(0.0)
+transition.set_to(360.0)
+transition.set_animatable(actor)
+transition.set_repeat_count(-1)
+transition.start()
 
 
 stage.add_child(actor)
