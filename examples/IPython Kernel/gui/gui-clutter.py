@@ -8,7 +8,7 @@ In [1]: %gui clutter
 In [2]: %run gui-clutter.py
 """
 
-from gi.repository import Clutter, GLib
+from gi.repository import Clutter
 
 
 def on_click(*args):
